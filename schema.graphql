@@ -1,0 +1,72 @@
+type User {
+  id:  ID!
+  username: String!
+  email: String! 
+
+  created_at: Time!
+  updated_at: Time!
+  deleted_at: Time
+}
+
+type Trips {
+  id:  ID!
+  return_date: Time!
+  place: String!
+  tickets: [Ticket!]!
+  lodgings: Lodging!
+  backpacks: [Backpack!]!
+
+  created_at: Time!
+  updated_at: Time!
+  deleted_at: Time
+}
+
+type Ticket {
+  id:  ID!
+  departure_date: Time!
+  price: Int!
+  terminal: String!
+
+  created_at: Time!
+  updated_at: Time!
+  deleted_at: Time
+}
+
+type Lodging {
+  id:  ID!
+  name: String!
+  contact: String!
+  start_date: Time!
+  end_date: Time!
+  address: String!
+
+  created_at: Time!
+  updated_at: Time!
+  deleted_at: Time
+}
+
+type Backpack {
+  user_id: ID!
+  items: [BackpackItem!]!
+
+  created_at: Time!
+  updated_at: Time!
+  deleted_at: Time
+}
+
+type BackpackItem {
+  id:  ID!
+  name: String!
+  qty: Int!
+
+  created_at: Time!
+  updated_at: Time!
+  deleted_at: Time
+}
+
+type Query  {
+  trips(user_id: String!): [Trips!]!
+}
+
+
+scalar Time

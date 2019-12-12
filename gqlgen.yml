@@ -1,0 +1,23 @@
+schema:
+- schema.graphql
+exec:
+  filename: services/graphql/generated.go
+resolver:
+  filename: services/graphql/resolver.go
+  type: Resolver
+model:
+  filename: services/graphql/models/generated.go
+models:
+  User:
+    model: github.com/rodrwan/twoppin.User
+  Ticket:
+    model: github.com/rodrwan/twoppin.Ticket
+  Trips:
+    model: github.com/rodrwan/twoppin.Trips
+  Lodging:
+    model: github.com/rodrwan/twoppin.Lodging
+  Backpack:
+    model: github.com/rodrwan/twoppin.Backpack
+  BackpackItem:
+    model: github.com/rodrwan/twoppin.BackpackItem
+
